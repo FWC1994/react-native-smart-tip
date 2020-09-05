@@ -161,6 +161,10 @@ show = () => {
 	    data: 'Loading',
 	    textColor: '#fff',
 	    backgroundColor: '#444444',
+        paddingTop: 20,
+        paddingBottom: 20,
+        paddingLeft: 20,
+        paddingRight: 20,
 	    position: WModal.position.CENTER,
 	    icon: <ActivityIndicator color='#fff' size={'large'}/>
 	}
