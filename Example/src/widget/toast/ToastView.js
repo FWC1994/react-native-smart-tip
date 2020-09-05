@@ -11,6 +11,14 @@ import { shadowBlackStyleBottom } from '../util/UiUtil'
 
 const MaxWidthRatio = 0.8
 const DefaultPadding = 10
+const StylesAllow = [ 
+    'padding', 
+    'paddingTop',
+    'paddingBottom',
+    'paddingLeft',
+    'paddingRight',
+    'backgroundColor',
+]
 export default class ToastView extends Component{
 
     constructor(props) {
@@ -44,18 +52,19 @@ export default class ToastView extends Component{
     render() {
 
         const containerStyle = {}
-        const contentStyle = {
-            paddingTop: this.props.paddingTop || DefaultPadding,
-            paddingBottom: this.props.paddingBottom || DefaultPadding,
-            paddingLeft: this.props.paddingLeft || DefaultPadding,
-            paddingRight: this.props.paddingRight || DefaultPadding,
-            backgroundColor: this.props.backgroundColor,
+        let contentStyle = {
             opacity: this.state.animatedValue2.interpolate({
                 inputRange: [0, 1, 2],
                 outputRange: [0, 1, 0]
             }),
             maxWidth: this.state.deviceWidth*MaxWidthRatio,
         }
+
+        StylesAllow.map((styleKey) => {
+            if(this.props.hasOwnProperty(styleKey)){
+                contentStyle[styleKey] = this.props[styleKey]
+            }
+        })
 
         if (this.props.position > 0) {
             containerStyle.justifyContent = 'flex-start';

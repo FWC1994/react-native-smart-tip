@@ -43,6 +43,7 @@ const toast5 = {
     data: 'Loading',
     textColor: '#fff',
     backgroundColor: '#444444',
+    padding: 30,
     position: Toast.position.CENTER,
     duration: Toast.duration.LONG,
     icon: <ActivityIndicator color='#fff' size={'large'}/>
