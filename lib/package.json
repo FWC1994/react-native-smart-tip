@@ -1,6 +1,6 @@
 {
-  "name": "react-native-smart-tip",
-  "version": "2.2.1",
+  "name": "@fengweichong/react-native-smart-tip",
+  "version": "2.2.3",
   "description": "react-native smart tip, including Toast、Modal、SnackBar",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mochixuan/react-native-smart-tip"
+    "url": "git+https://github.com/FWC1994/react-native-smart-tip"
   },
   "types": "./index.d.ts",
   "keywords": [
@@ -22,7 +22,7 @@
     "tip",
     "Notification"
   ],
-  "author": "mochixuan",
+  "author": "fengweichong",
   "license": "MIT",
   "dependencies": {
     "react-native-root-siblings": "^3.2.3"

@@ -175,6 +175,11 @@ position | Number   | false  | WToast.position.BOTTOM | Displayed position
 inEasing | Easing   | false  | Easing.elastic(1)| Admission animation
 textColor| String | false |'white'| font color
 backgroundColor| String | false | 'black' | background color
+padding| Number | false | 10 | padding
+paddingTop| Number | false | 10 | padding top
+paddingBottom| Number | false | 10 | padding bottom
+paddingLeft| Number | false | 10 | padding left
+paddingRight| Number | false | 10 | padding right
 icon | Component | fasse | undefined | Image to be displayed
 onRequestClose|Function|false| undefined| Android Back
 
