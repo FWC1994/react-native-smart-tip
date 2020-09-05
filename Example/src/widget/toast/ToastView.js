@@ -10,6 +10,7 @@ import {ToastInOutDuration, ToastInHeight} from '../data/Constants'
 import { shadowBlackStyleBottom } from '../util/UiUtil'
 
 const MaxWidthRatio = 0.8
+const DefaultPadding = 10
 export default class ToastView extends Component{
 
     constructor(props) {
@@ -44,12 +45,15 @@ export default class ToastView extends Component{
 
         const containerStyle = {}
         const contentStyle = {
+            paddingTop: this.props.paddingTop || DefaultPadding,
+            paddingBottom: this.props.paddingBottom || DefaultPadding,
+            paddingLeft: this.props.paddingLeft || DefaultPadding,
+            paddingRight: this.props.paddingRight || DefaultPadding,
             backgroundColor: this.props.backgroundColor,
             opacity: this.state.animatedValue2.interpolate({
                 inputRange: [0, 1, 2],
                 outputRange: [0, 1, 0]
             }),
-            minWidth: this.props.icon ? this.state.deviceWidth*0.4 : 0,
             maxWidth: this.state.deviceWidth*MaxWidthRatio,
         }
 
@@ -162,7 +166,7 @@ const styles = StyleSheet.create({
     },
     content: {
         borderRadius: 4,
-        padding: 10,
+        padding: DefaultPadding,
         alignItems: 'center'
     },
     icon: {
