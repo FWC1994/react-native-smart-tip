@@ -46,6 +46,7 @@ const toast5 = {
     padding: 30,
     position: Toast.position.CENTER,
     duration: Toast.duration.LONG,
+    animated: false,
     icon: <ActivityIndicator color='#fff' size={'large'}/>
 }
 

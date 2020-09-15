@@ -29,8 +29,10 @@ export default class ToastView extends Component{
         this.state = {
             deviceWidth: width,
             deviceHeight: height,
+            animated: props.hasOwnProperty('animated') ? props.animated : true, // 默认显示动画
             animatedValue1: new Animated.Value(0),
             animatedValue2: new Animated.Value(0.2),
+
         }
 
         // React after 17
@@ -70,26 +72,32 @@ export default class ToastView extends Component{
             containerStyle.justifyContent = 'flex-start';
             containerStyle.top = 40
             containerStyle.bottom = 0;
-            contentStyle.marginTop = this.state.animatedValue1.interpolate({
-                inputRange: [0, 1],
-                outputRange: [ToastInHeight/2, 0]
-            });
+            if(this.state.animated){
+                contentStyle.marginTop = this.state.animatedValue1.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [ToastInHeight/2, 0]
+                })
+            };
         } else if (this.props.position == 0) {
             containerStyle.justifyContent = 'center';
             containerStyle.top = 0
             containerStyle.bottom = 0;
-            contentStyle.marginTop = this.state.animatedValue1.interpolate({
-                inputRange: [0, 1],
-                outputRange: [ToastInHeight, 0]
-            });
+            if(this.state.animated){
+                contentStyle.marginTop = this.state.animatedValue1.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [ToastInHeight, 0]
+                });
+            };
         } else if (this.props.position < 0) {
             containerStyle.justifyContent = 'flex-end';
             containerStyle.top = 0
             containerStyle.bottom = 40;
-            contentStyle.marginBottom = this.state.animatedValue1.interpolate({
-                inputRange: [0, 1],
-                outputRange: [0, ToastInHeight/2]
-            });
+            if(this.state.animated){
+                contentStyle.marginBottom = this.state.animatedValue1.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [0, ToastInHeight/2]
+                });
+            }
         }
 
         let shadowStyle = {};
